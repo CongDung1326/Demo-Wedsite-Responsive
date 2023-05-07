@@ -1,0 +1,349 @@
+:root {
+    --color1: #19A7CE;
+    --color2: #212A3E;
+    --color3: #74C0Fc;
+    --color4: #E599F7;
+    --color5: #e29301;
+    --color6: #183153;
+    --color7: #c3c6d1;
+    --color8: #63E6BE;
+    --color9: #0CA678;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+#wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: block;
+    transition: color 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--color1);
+}
+
+.menu__list {
+    display: flex;
+    list-style: none;
+}
+
+.menu__sign-out {
+    position: relative;
+}
+
+.menu__sign-out::before {
+    content: "Sign In";
+    position: absolute;
+    width: max-content;
+    left: -70px;
+    font-size: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: max-content;
+    background: var(--color2);
+    color: white;
+    padding: 7px;
+    border-radius: 2px;
+}
+
+.menu__sign-out::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--color2);
+    transform: rotate(45deg) translateY(-50%);
+    left: -21px;
+    top: 50%;
+    z-index: -1;
+}
+
+.menu__sign-out::before,
+.menu__sign-out::after {
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 10px;
+    transition: 0.25s ease-out;
+    user-select: none;
+    pointer-events: none;
+}
+
+.menu__sign-out:hover.menu__sign-out::before,
+.menu__sign-out:hover.menu__sign-out::after {
+    opacity: 1;
+    visibility: visible;
+    margin-left: 0;
+}
+
+#wrapper__content>* {
+    margin-top: 50px;
+}
+
+/* Content-welcome */
+.content__welcome {
+    text-align: center;
+}
+
+.content__welcome>h1>span {
+    color: orange;
+}
+
+.content__welcome h1 {
+    margin: 10px 0;
+    font-size: 40px;
+}
+
+.content__welcome p {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.content__welcome .btn__contact button {
+    margin: 10px;
+    font-size: 23px;
+    outline: none;
+    padding: 10px 20px;
+    border: 2px solid var(--color6);
+    border-radius: 10px;
+    box-shadow: 0 5px var(--color6);
+    cursor: pointer;
+}
+
+.content__welcome .btn__contact button:first-child {
+    background: white;
+}
+
+.content__welcome .btn__contact button:last-child {
+    background: orange;
+}
+
+.content__welcome .btn__contact button:first-child:hover {
+    background: var(--color7);
+}
+
+.content__welcome .btn__contact button:last-child:hover {
+    background: var(--color5);
+}
+
+.content__featured {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "content content__list content__list"
+        "content content__news content__icons"
+        "content content__humans content__animations"
+    ;
+}
+
+.content {
+    grid-area: content;
+}
+
+.content__list {
+    grid-area: content__list;
+    text-align: center;
+}
+
+.content__news {
+    grid-area: content__news;
+}
+
+.content__icons {
+    grid-area: content__icons;
+}
+
+.content__humans {
+    grid-area: content__humans;
+}
+
+.content__animations {
+    grid-area: content__animations;
+}
+
+.content>* {
+    margin: 20px 0;
+}
+
+.content h3:first-of-type {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color3);
+}
+
+.content h4:first-of-type span {
+    text-transform: uppercase;
+    background: var(--color4);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.content h4:nth-of-type(2) span {
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background: var(--color3);
+    border-radius: 10px;
+}
+
+.content__featured :is(.content__list, .content__list, .content__news, .content__icons, .content__humans, .content__animations) {
+    border-radius: 10px;
+    box-shadow: 0 3px silver;
+    cursor: pointer;
+}
+
+.content__featured :is(.content__list, .content__list, .content__news, .content__icons, .content__humans, .content__animations) div {
+    background: var(--color4);
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
+}
+
+.content__featured :is(.content__list, .content__list, .content__news, .content__icons, .content__humans, .content__animations) p {
+    background: rgb(243, 243, 243);
+    width: 100%;
+    height: 30%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__featured :is(.content__list, .content__list, .content__news, .content__icons, .content__humans, .content__animations):hover {
+    border: 2px solid var(--color4);
+    box-shadow: 0 3px var(--color4);
+    border-radius: 12px;
+}
+
+/* content__featured-project */
+.content__top {
+    display: flex;
+}
+
+.content__top :is(.content__right, .content__left) {
+    width: 50%;
+}
+
+.content__top .content__right img {
+    width: 100%;
+    height: 100%;
+}
+
+.content__left>* {
+    margin: 20px 0;
+}
+
+.content__left>h3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--color9);
+}
+
+.content__left button {
+    outline: none;
+    padding: 10px 25px;
+    border: 2px solid var(--color6);
+    background: var(--color8);
+    border-radius: 10px;
+    box-shadow: 0 5px var(--color6);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.content__left button:hover {
+    background: #45a387;
+}
+
+.content__bottom {
+    display: flex;
+    gap: 10px;
+}
+
+.content__featured-list {
+    background: #e4e4e4;
+    border-radius: 20px;
+}
+
+.content__featured-list>* {
+    margin: 10px;
+}
+
+.content__featured-list>a {
+    color: var(--color9);
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 35px;
+    padding: 50px;
+}
+
+.menu__dropdown {
+    list-style: none;
+    width: 200px;
+    background: silver;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+    top: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease;
+}
+
+/* Question cho ngày mai là viết xong cái responsive */
+.menu__toggle {
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 1000px) {
+    #wrapper {
+        padding: 10px;
+    }
+
+    .content__featured {
+        grid-template-areas:
+            "content content"
+            "content__list content__list"
+            "content__news content__icons"
+            "content__humans content__animations"
+        ;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .menu__list {
+        display: none;
+    }
+
+    .menu__toggle {
+        display: block;
+    }
+}

@@ -17,6 +17,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #wrapper {
     max-width: 1000px;
     margin: 0 auto;

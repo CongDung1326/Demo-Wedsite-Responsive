@@ -417,3 +417,24 @@ footer {
         display: block;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .text p {
+        font-size: 12px;
+    }
+
+    .text img {
+        width: 200px;
+        height: 200px;
+    }
+
+    footer {
+        display: block;
+    }
+
+    .content__bottom {
+        display: block;
+    }
+}
+
+/* Cách fjx cái ảnh con mèo nó 0 thể hiện hết thì ta chỉ cần sử dụng media sreen :v (mai làm) */
